@@ -5,12 +5,13 @@
         public static class Forms
         {
             public static Form_Main Main;
+            public static Form_Startup Startup                                = new Form_Startup();
             public static readonly Form_Settings Settings                     = new Form_Settings();
             public static readonly Form_Queue Queue                           = new Form_Queue();
             public static readonly Form_Crosshair Crosshair                   = new Form_Crosshair();
             public static readonly Form_CloudIDFriend CloudIDFriend           = new Form_CloudIDFriend();
             public static readonly Form_CharactersPreset CharactersPreset     = new Form_CharactersPreset();
-            public static readonly Form_Timer TimerForm                       = new Form_Timer();
+            public static readonly Form_Timer Timer                           = new Form_Timer();
         }
         public static class CursedAPI
         {

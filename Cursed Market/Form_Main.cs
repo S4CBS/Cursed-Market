@@ -41,6 +41,7 @@ namespace Cursed_Market
         private void Form_Main_Load(object sender, EventArgs e)
         {
             Globals_Cache.Forms.Main = this; // Getting form cached allows us to interact with it from any class, at any time given and avoid situations where we are forced to create a new instance of the Form due to variable being lost.
+            this.TopMost = true; // We've just started the application and we want it to be shown above any other running, param is set to false on Form_Main_Shown!
 
 
 
@@ -89,6 +90,15 @@ namespace Cursed_Market
         private void Form_Main_Shown(object sender, EventArgs e) // We only want to make crosshair visibly when Form has already been loaded! If we do that too early, white square will appear in middle of the screen due to Crosshair Form wasn't yet intialized.
         {
             SetCrosshairVisibility(Globals.Crosshair.selectedCrosshair != Globals.Crosshair.E_Crosshairs.none);
+
+
+            if (Globals.Application.HasStartupArgument(Globals.Application.SE_CommonStartupArguments.timerFeature))
+            {
+                Globals_Cache.Forms.Timer.Show();
+            }
+
+
+            this.TopMost = false;
         }
 
 
@@ -522,11 +532,6 @@ namespace Cursed_Market
             {
                 Messaging.ShowMessage("Cursed Market failed to start proxy instance!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
-            }
-
-            if (Globals.Application.HasStartupArgument(Globals.Application.SE_CommonStartupArguments.timerFeature))
-            {
-                Globals_Cache.Forms.TimerForm.Show();
             }
             
             button_Start.Visible = false;

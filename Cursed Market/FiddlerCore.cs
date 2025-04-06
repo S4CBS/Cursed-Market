@@ -120,7 +120,7 @@ namespace Cursed_Market
 
         public static void FiddlerToCatchBeforeRequest(Session oSession)
         {
-            if (oSession.uriContains("/login?token="))
+            if (oSession.uriContains("/login?token=") || oSession.uriContains("/loginWithTokenBody"))
             {
                 if (oSession.oRequest["User-Agent"].Length > 0)
                     Globals_Session.Game.user_agent = oSession.oRequest["User-Agent"];
@@ -152,7 +152,6 @@ namespace Cursed_Market
 
                 return;
             }
-
 
 
             if (Globals_Session.Game.Platform.GetCurrentPlatformHostNames().Contains(oSession.hostname))

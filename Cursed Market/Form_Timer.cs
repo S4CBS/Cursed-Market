@@ -37,8 +37,26 @@ namespace Cursed_Market
         {
             get
             {
+                // Retrieve the base window creation parameters.
                 CreateParams createParams = base.CreateParams;
-                createParams.ExStyle |= 0x20 | 0x80 | 0x80000 | 0x08000000; // 0x80 = WS_EX_TOOLWINDOW | 0x08000000 = WS_EX_NOACTIVATE 
+
+                // The ExStyle property sets the extended window styles.
+                // Here we enable several flags using the bitwise OR operator:
+                //
+                // 0x20  - WS_EX_TRANSPARENT:
+                //         Makes the window transparent to mouse events, meaning that clicks pass through the window.
+                //
+                // 0x80  - WS_EX_TOOLWINDOW:
+                //         Designates the window as a tool window, which prevents it from appearing on the taskbar.
+                //
+                // 0x80000  - WS_EX_LAYERED:
+                //         Allows the use of transparency effects and alpha blending for the window.
+                //
+                // 0x08000000  - WS_EX_NOACTIVATE:
+                //         Prevents the window from being activated when clicked, i.e., it does not gain focus.
+                createParams.ExStyle |= 0x20 | 0x80 | 0x80000 | 0x08000000;
+
+
                 return createParams;
             }
         }
@@ -159,23 +177,11 @@ namespace Cursed_Market
             }
             else
             {
+                Media.PlaySoundFromStream(Properties.Resources.SFX_Boopie);
                 bgwTimer.RunWorkerAsync();
             }
         }
-        public void StopTimer()
-        {
-            if (bgwTimer.IsBusy)
-            {
-                bgwTimer.CancelAsync();
-            }
-        }
-        public void StartTimer()
-        {
-            if (bgwTimer.IsBusy == false)
-            {
-                bgwTimer.RunWorkerAsync();
-            }
-        }
+
 
 
 
