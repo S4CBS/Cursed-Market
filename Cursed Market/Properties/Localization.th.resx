@@ -289,4 +289,7 @@
   <data name="WARNING_CharacterOwnership" xml:space="preserve">
     <value>คำเตือน! แม้ว่าโปรแกรมนี้จะปลดล็อกให้คุณเข้าถึงตัวละครในเกมทั้งหมด แต่หากคุณพยายามใช้ตัวละครที่คุณไม่ได้เป็นเจ้าของจริงๆ คุณจะถูกส่งกลับไปยังเมนูหลัก และถูกระงับการใช้งานชั่วคราว!</value>
   </data>
+  <data name="STARTUP" xml:space="preserve">
+    <value>กรุณารอซักครู่...</value>
+  </data>
 </root>

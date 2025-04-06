@@ -560,6 +560,15 @@ namespace Cursed_Market.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please, wait....
+        /// </summary>
+        internal static string STARTUP {
+            get {
+                return ResourceManager.GetString("STARTUP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to WARNING! Although this program unlocks access to all in-game characters, attempts to use characters you don&apos;t actually own will result in being kicked back to the main menu, followed by a temporary ban!.
         /// </summary>
         internal static string WARNING_CharacterOwnership {
