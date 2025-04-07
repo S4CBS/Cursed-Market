@@ -165,11 +165,11 @@
     <Compile Include="Form_Settings.Designer.cs">
       <DependentUpon>Form_Settings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Startup.cs">
+    <Compile Include="Form_Wait.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Startup.Designer.cs">
-      <DependentUpon>Form_Startup.cs</DependentUpon>
+    <Compile Include="Form_Wait.Designer.cs">
+      <DependentUpon>Form_Wait.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Timer.cs">
       <SubType>Form</SubType>
@@ -227,8 +227,8 @@
     <EmbeddedResource Include="Form_Settings.resx">
       <DependentUpon>Form_Settings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Startup.resx">
-      <DependentUpon>Form_Startup.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Wait.resx">
+      <DependentUpon>Form_Wait.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Timer.resx">
       <DependentUpon>Form_Timer.cs</DependentUpon>
@@ -242,7 +242,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localization.ar.resx" />
+    <EmbeddedResource Include="Properties\Localization.ar.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localization.de.resx" />
     <EmbeddedResource Include="Properties\Localization.es.resx" />
     <EmbeddedResource Include="Properties\Localization.fr.resx" />
@@ -494,6 +496,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\SFX_Boopie.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SFX_Boopie_Error.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

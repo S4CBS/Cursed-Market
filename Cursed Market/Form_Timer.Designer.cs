@@ -61,6 +61,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Timer";
             this.TopMost = true;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Timer_FormClosing);
             this.Load += new System.EventHandler(this.Form_Timer_Load);
             this.ResumeLayout(false);
 

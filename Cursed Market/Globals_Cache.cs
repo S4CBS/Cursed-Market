@@ -5,7 +5,7 @@
         public static class Forms
         {
             public static Form_Main Main;
-            public static Form_Startup Startup                                = new Form_Startup();
+            public static Form_Wait Wait;
             public static readonly Form_Settings Settings                     = new Form_Settings();
             public static readonly Form_Queue Queue                           = new Form_Queue();
             public static readonly Form_Crosshair Crosshair                   = new Form_Crosshair();

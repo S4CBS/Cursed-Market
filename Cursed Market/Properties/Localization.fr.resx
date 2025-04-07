@@ -289,7 +289,7 @@ Le logiciel ne fonctionnera pas correctement tant que la police n'est pas instal
   <data name="WARNING_CharacterOwnership" xml:space="preserve">
     <value>ATTENTION ! Bien que ce programme vous débloque l'accès à tous les personnages du jeu, toute tentative d'utilisation de personnages que vous ne possédez pas réellement entraînera un retour forcé au menu principal suivi d'un bannissement temporaire !</value>
   </data>
-  <data name="STARTUP" xml:space="preserve">
+  <data name="PLEASE_WAIT" xml:space="preserve">
     <value>Veuillez patienter...</value>
   </data>
 </root>

@@ -651,6 +651,15 @@ namespace Cursed_Market.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream SFX_Boopie_Error {
+            get {
+                return ResourceManager.GetStream("SFX_Boopie_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream SFX_Error {
             get {
                 return ResourceManager.GetStream("SFX_Error", resourceCulture);

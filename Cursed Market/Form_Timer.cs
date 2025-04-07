@@ -173,6 +173,7 @@ namespace Cursed_Market
         {
             if (bgwTimer.IsBusy)
             {
+                Media.PlaySoundFromStream(Properties.Resources.SFX_Boopie_Error);
                 bgwTimer.CancelAsync();
             }
             else
@@ -227,6 +228,10 @@ namespace Cursed_Market
 
 
             bgwHook.RunWorkerAsync();
+        }
+        private void Form_Timer_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
         }
 
 

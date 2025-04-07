@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Runtime.InteropServices;
@@ -8,22 +10,127 @@ namespace Cursed_Market
 {
     public partial class Form_Crosshair : Form
     {
-        [DllImport("user32.dll")]
-        static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
-        [DllImport("user32.dll", SetLastError = true)]
-        static extern int GetWindowLong(IntPtr hWnd, int nIndex);
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        private static extern IntPtr SetWindowsHookEx(int idHook, LowLevelMouseProc lpfn, IntPtr hMod, uint dwThreadId);
+
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        private static extern bool UnhookWindowsHookEx(IntPtr hhk);
+
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        private static extern IntPtr CallNextHookEx(IntPtr hhk, int nCode, IntPtr wParam, IntPtr lParam);
+
+
+        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        private static extern IntPtr GetModuleHandle(string lpModuleName);
+
+
+        // Delegate for the hook callback function
+        private delegate IntPtr LowLevelMouseProc(int nCode, IntPtr wParam, IntPtr lParam);
+
+
 
 
         protected override CreateParams CreateParams
         {
-            // https://stackoverflow.com/questions/3900947/hiding-winforms-app-from-taskbar
-            // No idea what exactly it does, but it works :)
             get
             {
+                // Retrieve the base window creation parameters.
                 CreateParams createParams = base.CreateParams;
-                createParams.ExStyle |= 0x80;
+
+                // The ExStyle property sets the extended window styles.
+                // Here we enable several flags using the bitwise OR operator:
+                //
+                // 0x20  - WS_EX_TRANSPARENT:
+                //         Makes the window transparent to mouse events, meaning that clicks pass through the window.
+                //
+                // 0x80  - WS_EX_TOOLWINDOW:
+                //         Designates the window as a tool window, which prevents it from appearing on the taskbar.
+                //
+                // 0x80000  - WS_EX_LAYERED:
+                //         Allows the use of transparency effects and alpha blending for the window.
+                //
+                // 0x08000000  - WS_EX_NOACTIVATE:
+                //         Prevents the window from being activated when clicked, i.e., it does not gain focus.
+                createParams.ExStyle |= 0x20 | 0x80 | 0x80000 | 0x08000000;
+
+
                 return createParams;
             }
+        }
+
+
+
+
+        // Global hook variables
+        private IntPtr _hookID = IntPtr.Zero;
+        private LowLevelMouseProc _proc;
+
+        // Constants for hook and mouse event
+        private const int WH_MOUSE_LL = 14;
+        private const int WM_RBUTTONDOWN = 0x204;
+        private const int WM_RBUTTONUP = 0x205;
+
+        // Background workers for mouse hook and timer
+        private BackgroundWorker bgwHook;
+
+
+
+
+        // Set the global mouse hook
+        private IntPtr SetHook(LowLevelMouseProc proc)
+        {
+            using (Process curProcess = Process.GetCurrentProcess())
+            using (ProcessModule curModule = curProcess.MainModule)
+            {
+                return SetWindowsHookEx(WH_MOUSE_LL, proc, GetModuleHandle(curModule.ModuleName), 0);
+            }
+        }
+        // Global hook callback function
+        private IntPtr HookCallback(int nCode, IntPtr wParam, IntPtr lParam)
+        {
+            if (nCode >= 0)
+            {
+                if (this.IsHandleCreated && this.Handle != IntPtr.Zero)
+                {
+                    if (wParam == (IntPtr)WM_RBUTTONDOWN)
+                    {
+                        this.BeginInvoke((Action)(() => this.Opacity = (float)Globals.Crosshair.opacity / 100));
+                    }
+                    else if (wParam == (IntPtr)WM_RBUTTONUP)
+                    {
+                        this.BeginInvoke((Action)(() => this.Opacity = 0));
+                    }
+                }
+            }
+
+
+            return CallNextHookEx(_hookID, nCode, wParam, lParam);
+        }
+
+
+
+
+        // Background worker method for global mouse hook
+        private void bgwHook_DoWork(object sender, DoWorkEventArgs e)
+        {
+            // Set the global hook
+            _hookID = SetHook(_proc);
+            // Start a message loop to keep the hook active
+            Application.Run();
+        }
+
+
+
+
+        private void InitializeBackgroundWorkers()
+        {
+            // Initialize background worker for global mouse hook
+            bgwHook = new BackgroundWorker();
+            bgwHook.WorkerSupportsCancellation = true;
+            bgwHook.DoWork += bgwHook_DoWork;
         }
 
 
@@ -33,6 +140,15 @@ namespace Cursed_Market
         {
             InitializeComponent();
             InitializeSettings();
+            if (Globals.Application.startupArguments.Contains(Globals.Application.SE_CommonStartupArguments.crosshairToggleFeature))
+            {
+                InitializeBackgroundWorkers();
+                bgwHook.RunWorkerAsync();
+            }
+                
+
+            // Initialize mouse hook delegate
+            _proc = HookCallback;
 
 
             this.Width = Screen.PrimaryScreen.Bounds.Width;   // Get user screen size and apply it to Crosshair Form width.
@@ -41,10 +157,7 @@ namespace Cursed_Market
         private void Form_Crosshair_Load(object sender, EventArgs e)
         {
             CheckForIllegalCrossThreadCalls = false; // We need to disable Safety Measures in order to call user32.dll.
-
-            int initialStyle = GetWindowLong(this.Handle, -20);             // Get GWL_EXSTYLE of this Form.
-            SetWindowLong(this.Handle, -20, initialStyle | 0x80000 | 0x20); // 0x80000 - WS_EX_LAYERED (Allows window to be half or fully transparent), 0x20 - WS_EX_TRANSPARENT (Makes window invisible for mouse click, so user can not interact with it)
-            SetStyle(ControlStyles.SupportsTransparentBackColor, true);     // Enables transparent background support for our Form.
+            SetStyle(ControlStyles.SupportsTransparentBackColor, true); // Enables transparent background support for our Form.
         }
         private void Form_Crosshair_Shown(object sender, EventArgs e) // Update crosshair settings each time it's initially displayed on screen.
         {

@@ -105,6 +105,11 @@ namespace Cursed_Market
             Application.ThreadException += new ThreadExceptionEventHandler(ExceptionHandler);
             try
             {
+                Form_Wait formWait = new Form_Wait();
+                formWait.Show();
+                Application.DoEvents();
+
+
                 Application.Run(new Form_Main());
             }
             catch (Exception ex)

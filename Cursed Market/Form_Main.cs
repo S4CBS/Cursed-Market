@@ -92,12 +92,13 @@ namespace Cursed_Market
             SetCrosshairVisibility(Globals.Crosshair.selectedCrosshair != Globals.Crosshair.E_Crosshairs.none);
 
 
-            if (Globals.Application.HasStartupArgument(Globals.Application.SE_CommonStartupArguments.timerFeature))
+            if (Globals.Application.HasStartupArgument(Globals.Application.SE_CommonStartupArguments.timerToggleFeature))
             {
                 Globals_Cache.Forms.Timer.Show();
             }
 
 
+            Globals_Cache.Forms.Wait.Hide();
             this.TopMost = false;
         }
 

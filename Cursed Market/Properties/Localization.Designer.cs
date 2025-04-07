@@ -533,6 +533,15 @@ namespace Cursed_Market.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please, wait....
+        /// </summary>
+        internal static string PLEASE_WAIT {
+            get {
+                return ResourceManager.GetString("PLEASE_WAIT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to QUEUE POSITION WILL BE SHOWN HERE.
         /// </summary>
         internal static string QUEUE_Idle {
@@ -556,15 +565,6 @@ namespace Cursed_Market.Properties {
         internal static string QUEUE_MatchStarting {
             get {
                 return ResourceManager.GetString("QUEUE_MatchStarting", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Please, wait....
-        /// </summary>
-        internal static string STARTUP {
-            get {
-                return ResourceManager.GetString("STARTUP", resourceCulture);
             }
         }
         

@@ -289,7 +289,7 @@ Die Software funktioniert nicht richtig, bis die Schriftart installiert ist: "{0
   <data name="WARNING_CharacterOwnership" xml:space="preserve">
     <value>ACHTUNG! Obwohl das Programm euch Zugriff auf alle Charaktere im Spiel freischaltet, führt jeder Versuch, Charaktere zu verwenden, die ihr nicht tatsächlich besitzt, dazu, dass ihr ins Hauptmenü zurückgeworfen werdet, gefolgt von einer temporären Sperre!</value>
   </data>
-  <data name="STARTUP" xml:space="preserve">
+  <data name="PLEASE_WAIT" xml:space="preserve">
     <value>Bitte warten Sie...</value>
   </data>
 </root>

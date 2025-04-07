@@ -33,7 +33,10 @@ namespace Cursed_Market
                 public static readonly string noCustomizationsKing = "-noCustomizationsKing";
                 public static readonly string noAntiKillSwitch     = "-noAntiKillSwitch";
                 public static readonly string noCharacterData      = "-noCharacterData";
-                public static readonly string timerFeature         = "-timerFeature";
+
+
+                public static readonly string timerToggleFeature     = "-timerToggleFeature";
+                public static readonly string crosshairToggleFeature = "-crosshairToggleFeature";
             }
             public static readonly List<string> startupArguments = new List<string>(Environment.GetCommandLineArgs()); // As soon as we obtain command line arguments, we immediately convert them into convenient to work with List<string>.
             public static bool HasStartupArgument(string startupArgument)
@@ -138,6 +141,17 @@ namespace Cursed_Market
                 }
 
 
+                if ((Globals_Cache.Forms.Wait != null) && Globals_Cache.Forms.Wait.InvokeRequired)
+                {
+                    Globals_Cache.Forms.Wait.Invoke(new Action(() =>
+                        Globals_Cache.Forms.Wait.ReloadTheme()));
+                }
+                else
+                {
+                    Globals_Cache.Forms.Wait.ReloadTheme();
+                }
+
+
                 if (Globals_Cache.Forms.Settings.InvokeRequired)
                 {
                     Globals_Cache.Forms.Settings.Invoke(new Action(() =>
@@ -179,6 +193,17 @@ namespace Cursed_Market
                 else
                 {
                     Globals_Cache.Forms.CharactersPreset.ReloadTheme();
+                }
+
+
+                if (Globals_Cache.Forms.Timer.InvokeRequired)
+                {
+                    Globals_Cache.Forms.Timer.Invoke(new Action(() =>
+                        Globals_Cache.Forms.Timer.ReloadTheme()));
+                }
+                else
+                {
+                    Globals_Cache.Forms.Timer.ReloadTheme();
                 }
             }
 

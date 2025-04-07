@@ -289,7 +289,7 @@ Yazılım, yazı tipi "{0}" yüklenmeden düzgün çalışmaz.</value>
   <data name="WARNING_CharacterOwnership" xml:space="preserve">
     <value>DİKKAT! Program, oyundaki tüm karakterlere erişiminizi açsa da gerçekte sahip olmadığınız karakterleri kullanmaya çalışmanız sizi ana menüye geri atacak ve ardından geçici süreyle engellenmenize neden olacaktır!</value>
   </data>
-  <data name="STARTUP" xml:space="preserve">
+  <data name="PLEASE_WAIT" xml:space="preserve">
     <value>Lütfen bekleyiniz...</value>
   </data>
 </root>
