@@ -19,6 +19,12 @@ namespace Cursed_Market
                 public static readonly string downloadsDirectoryPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads");
             }
         }
+
+
+
+
+
+
         public static class Application
         {
             public static long startupTimeStamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
@@ -65,6 +71,7 @@ namespace Cursed_Market
             public static readonly string requirementsDirectoryPath = Path.Combine(executableDirectoryPath, "Requirements");
             public static readonly string charactersPresetDirectoryPath = Path.Combine(executableDirectoryPath, "Characters Preset");
             public static readonly string crosshairsDirectoryPath = Path.Combine(executableDirectoryPath, "Crosshairs");
+            public static readonly string extraLogicDirectoryPath = Path.Combine(executableDirectoryPath, "Extra Logic");
 
 
 
@@ -243,12 +250,8 @@ namespace Cursed_Market
             }
 
 
-
-
             public static bool initialized = false;
             public static bool offlineMode = false;
-
-
 
 
             public static class Theme
@@ -263,9 +266,15 @@ namespace Cursed_Market
                     christmas
                 }
 
+
                 public static E_Themes selectedTheme = (E_Themes)WinReg.GetData_DWORD(WinReg.SE_CommonEntries.applicationTheme, (int)E_Themes.darkMemories);
             }
         }
+
+
+
+
+
 
         public static class Game
         {
@@ -283,11 +292,15 @@ namespace Cursed_Market
 
                 return null;
             }
+
+
             public static bool IsRunning()
             {
                 Process gameProcess = GetProcess();
                 return gameProcess.Responding;
             }
+
+
             public static bool Exit()
             {
                 Process gameProcess = GetProcess();
@@ -296,6 +309,11 @@ namespace Cursed_Market
                 return gameProcess.HasExited;
             }
         }
+
+
+
+
+
 
         public static class Queue
         {
@@ -312,8 +330,15 @@ namespace Cursed_Market
                 militaryHorn
             }
 
+
             public static E_NotifySounds selectedNotifySound = (E_NotifySounds)WinReg.GetData_DWORD(WinReg.SE_CommonEntries.queueNotifySound, (int)E_NotifySounds.none);
         }
+
+
+
+
+
+
         public static class Crosshair
         {
             public enum E_Crosshairs
@@ -370,10 +395,20 @@ namespace Cursed_Market
             public static readonly string customCrosshair16FilePath = Path.Combine(Application.crosshairsDirectoryPath, "Crosshair 16.png");
         }
 
+
+
+
+
+
         public static class GameProfile
         {
             public static string selectedPreset = WinReg.GetData_SZ(WinReg.SE_CommonEntries.gameProfile) ?? null;
         }
+
+
+
+
+
 
         public static class CharacterData
         {
@@ -396,6 +431,11 @@ namespace Cursed_Market
 
             public static Dictionary<string, S_CharacterData> characterDataMap = new Dictionary<string, S_CharacterData>();
         }
+
+
+
+
+
 
         public static class CharactersPreset
         {
@@ -502,8 +542,18 @@ namespace Cursed_Market
             }
         }
 
+
+
+
+
+
         public static class FiddlerCoreTunables
         {
+            public static string extraLogicBeforeRequestFilePath        = Path.Combine(Application.extraLogicDirectoryPath, "BeforeRequest.csx");
+            public static string extraLogicBeforeResponseFilePath       = Path.Combine(Application.extraLogicDirectoryPath, "BeforeResponse.csx");
+            public static string extraLogicAfterSessionCompleteFilePath = Path.Combine(Application.extraLogicDirectoryPath, "AfterSessionComplete.csx");
+
+
             public static class Catalog
             {
                 public static bool enabled = false;
@@ -539,6 +589,10 @@ namespace Cursed_Market
         }
 
 
+
+
+
+
         public static class GameAuth
         {
             public static void ResolveUserID(string gameAuthResponse)
@@ -557,6 +611,8 @@ namespace Cursed_Market
 
 
 
+
+
         public static void SetGameChangerStatus(CursedAPI.E_GameChangers gameChanger, CursedAPI.E_GameChangerStatus newStatus)
         {
             if (Globals_Cache.Forms.Main.InvokeRequired)
@@ -569,6 +625,10 @@ namespace Cursed_Market
                 Globals_Cache.Forms.Main.SetGameChangerStatus(gameChanger, newStatus);
             }
         }
+
+
+
+
         public static void SetMainFunctionEnabled(CursedAPI.E_MainFunctions mainFunction, bool newStatus)
         {
             if (Globals_Cache.Forms.Main.InvokeRequired)

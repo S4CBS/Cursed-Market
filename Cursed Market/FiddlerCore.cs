@@ -1,8 +1,13 @@
 ﻿using Fiddler;
+using Microsoft.CodeAnalysis.CSharp.Scripting;
+using Microsoft.CodeAnalysis.Scripting;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Cursed_Market
@@ -92,6 +97,43 @@ namespace Cursed_Market
 
 
 
+        public static bool LoadAndRunExtraLogic(string logicFilePath)
+        {
+            try
+            {
+                string customCode = File.ReadAllText(logicFilePath);
+                if (string.IsNullOrEmpty(customCode))
+                {
+                    return false;
+                }
+
+
+                CSharpScript.RunAsync(
+                customCode,
+                ScriptOptions.Default
+                    .WithReferences(
+                        typeof(FiddlerApplication).Assembly,
+                        typeof(object).Assembly,
+                        typeof(MessageBox).Assembly
+                    )
+                    .WithImports("System", "Fiddler", "System.Windows.Forms")
+                )
+                .GetAwaiter()
+                .GetResult();
+
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to compile Extra Logic module!\nModule: \"{logicFilePath}\"\nException: {ex.ToString()}", "Extra Logic", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return false;
+            }
+        }
+
+
+
+
         public static bool Start()
         {
             if (EnsureRootCertificate() == false)
@@ -99,8 +141,42 @@ namespace Cursed_Market
                 Messaging.ShowMessage("Cursed Market failed to ensure root certificate!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return false;
             }
-
             FiddlerApplication.Startup(new FiddlerCoreStartupSettingsBuilder().ListenOnPort(8888).RegisterAsSystemProxy().ChainToUpstreamGateway().DecryptSSL().OptimizeThreadPool().Build());
+            
+
+            List<string> runningExtraLogic = new List<string>();
+            if(File.Exists(Globals.FiddlerCoreTunables.extraLogicBeforeRequestFilePath) && LoadAndRunExtraLogic(Globals.FiddlerCoreTunables.extraLogicBeforeRequestFilePath))
+            {
+                runningExtraLogic.Add(Globals.FiddlerCoreTunables.extraLogicBeforeRequestFilePath);
+            }
+            if (File.Exists(Globals.FiddlerCoreTunables.extraLogicBeforeResponseFilePath) && LoadAndRunExtraLogic(Globals.FiddlerCoreTunables.extraLogicBeforeResponseFilePath))
+            {
+                runningExtraLogic.Add(Globals.FiddlerCoreTunables.extraLogicBeforeResponseFilePath);
+            }
+            if (File.Exists(Globals.FiddlerCoreTunables.extraLogicAfterSessionCompleteFilePath) && LoadAndRunExtraLogic(Globals.FiddlerCoreTunables.extraLogicAfterSessionCompleteFilePath))
+            {
+                runningExtraLogic.Add(Globals.FiddlerCoreTunables.extraLogicAfterSessionCompleteFilePath);
+            }
+
+
+            if (runningExtraLogic.Count > 0) 
+            {
+                IEnumerable<string> numberedLines = runningExtraLogic.Select((item, index) => $"{index + 1}) \"{item}\"");
+                string outText = string.Join(Environment.NewLine, numberedLines);
+
+
+                Thread messageThread = new Thread(() =>
+                {
+                    MessageBox.Show($"Fiddler Core is now running with following modules:\n{outText}", "Extra Logic", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                });
+
+
+                messageThread.SetApartmentState(ApartmentState.STA);
+                messageThread.IsBackground = true;
+                messageThread.Start();
+            }
+
+
             return IsRunning();
         }
         public static void Stop()
