@@ -97,19 +97,25 @@ namespace Cursed_Market
 
 
 
-        public static bool LoadAndRunExtraLogic(string logicFilePath)
+        public static bool LoadAndRunExtraLogic(string extraLogicFilePath)
         {
+            if (File.Exists(extraLogicFilePath) == false)
+            {
+                return false;
+            }
+
+
             try
             {
-                string customCode = File.ReadAllText(logicFilePath);
-                if (string.IsNullOrEmpty(customCode))
+                string extraLogicCode = File.ReadAllText(extraLogicFilePath);
+                if (string.IsNullOrEmpty(extraLogicCode))
                 {
                     return false;
                 }
 
 
                 CSharpScript.RunAsync(
-                customCode,
+                extraLogicCode,
                 ScriptOptions.Default
                     .WithReferences(
                         typeof(FiddlerApplication).Assembly,
@@ -126,7 +132,7 @@ namespace Cursed_Market
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Failed to compile Extra Logic module!\nModule: \"{logicFilePath}\"\nException: {ex.ToString()}", "Extra Logic", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show($"Failed to compile Extra Logic module!\nModule: \"{extraLogicFilePath}\"\nException: {ex.ToString()}", "Extra Logic", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return false;
             }
         }
@@ -145,15 +151,15 @@ namespace Cursed_Market
             
 
             List<string> runningExtraLogic = new List<string>();
-            if(File.Exists(Globals.FiddlerCoreTunables.extraLogicBeforeRequestFilePath) && LoadAndRunExtraLogic(Globals.FiddlerCoreTunables.extraLogicBeforeRequestFilePath))
+            if (LoadAndRunExtraLogic(Globals.FiddlerCoreTunables.extraLogicBeforeRequestFilePath))
             {
                 runningExtraLogic.Add(Globals.FiddlerCoreTunables.extraLogicBeforeRequestFilePath);
             }
-            if (File.Exists(Globals.FiddlerCoreTunables.extraLogicBeforeResponseFilePath) && LoadAndRunExtraLogic(Globals.FiddlerCoreTunables.extraLogicBeforeResponseFilePath))
+            if (LoadAndRunExtraLogic(Globals.FiddlerCoreTunables.extraLogicBeforeResponseFilePath))
             {
                 runningExtraLogic.Add(Globals.FiddlerCoreTunables.extraLogicBeforeResponseFilePath);
             }
-            if (File.Exists(Globals.FiddlerCoreTunables.extraLogicAfterSessionCompleteFilePath) && LoadAndRunExtraLogic(Globals.FiddlerCoreTunables.extraLogicAfterSessionCompleteFilePath))
+            if (LoadAndRunExtraLogic(Globals.FiddlerCoreTunables.extraLogicAfterSessionCompleteFilePath))
             {
                 runningExtraLogic.Add(Globals.FiddlerCoreTunables.extraLogicAfterSessionCompleteFilePath);
             }
