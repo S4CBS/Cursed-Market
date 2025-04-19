@@ -120,9 +120,11 @@ namespace Cursed_Market
                     .WithReferences(
                         typeof(FiddlerApplication).Assembly,
                         typeof(object).Assembly,
-                        typeof(MessageBox).Assembly
+                        typeof(Extensions).Assembly,
+                        typeof(MessageBox).Assembly,
+                        typeof(JObject).Assembly
                     )
-                    .WithImports("System", "Fiddler", "System.Windows.Forms")
+                    .WithImports("System", "Fiddler", "Cursed_Market", "System.Windows.Forms", "Newtonsoft.Json.Linq")
                 )
                 .GetAwaiter()
                 .GetResult();
