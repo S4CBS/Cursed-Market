@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
@@ -40,15 +41,12 @@ namespace Cursed_Market
             }
         }
 
-
         static FiddlerCore()
         {
             FiddlerApplication.BeforeRequest += FiddlerToCatchBeforeRequest;
             FiddlerApplication.BeforeResponse += FiddlerToCatchBeforeResponse;
             FiddlerApplication.AfterSessionComplete += FiddlerToCatchAfterSessionComplete;
         }
-
-
 
 
         private static bool EnsureRootCertificate()
@@ -468,7 +466,7 @@ namespace Cursed_Market
         {
             if (Globals_Session.Game.Platform.GetCurrentPlatformHostNames().Contains(oSession.hostname))
             {
-                if (oSession.uriContains("/login?token="))
+                if (oSession.uriContains("/login?token=") || oSession.uriContains("steam/login") || oSession.uriContains("grdk/loginWithTokenBody"))
                 {
                     oSession.utilDecodeResponse();
                     Globals.GameAuth.ResolveUserID(oSession.GetResponseBodyAsString());
@@ -626,6 +624,16 @@ namespace Cursed_Market
                                         {
                                             Archives.S_MatchData matchData = new Archives.S_MatchData((string)matchId, (string)krakenMatchId);
                                             Archives.CompleteActiveQuest(matchData);
+                                        }
+                                        else
+                                        {
+                                            matchId = eventData["matchmaking_session_guid"];
+
+                                            if (matchId != null && krakenMatchId != null)
+                                            {
+                                                Archives.S_MatchData matchData = new Archives.S_MatchData((string)matchId, (string)krakenMatchId);
+                                                Archives.CompleteActiveQuest(matchData);
+                                            }
                                         }
                                     }
                                 }

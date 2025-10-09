@@ -19,10 +19,6 @@ namespace Cursed_Market
                 Custom
             }
 
-
-
-
-            public static string ApiKey = null;
             public static string userId = null;
 
 
@@ -142,6 +138,7 @@ namespace Cursed_Market
             public static string client_platform = null;
             public static string client_os = null;
             public static string api_key = null;
+            public static string client_kraken_session = null;
         }
     }
 }

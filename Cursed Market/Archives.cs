@@ -1,5 +1,6 @@
 ﻿using CranchyLib.Networking;
 using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 
 namespace Cursed_Market
@@ -127,6 +128,7 @@ namespace Cursed_Market
             if (matchData.matchId != lastSuccessfulMatch.matchId && matchData.krakenMatchId != lastSuccessfulMatch.krakenMatchId) // Verify that match we're about to use isn't one that we've already used.
             {
                 S_Quest activeQuest = GetActiveQuest();
+
                 if (activeQuest.nodeId != null && (activeQuest.currentProgression != activeQuest.neededProgression)) // Make sure that we've successfully retrieved a quest data and that quest isn't yet complete (there's progression steps to do)
                 {
                     List<string> headers = new List<string>()

@@ -272,6 +272,7 @@
     <EmbeddedResource Include="Properties\Localization.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Localization.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -284,21 +285,43 @@
     <EmbeddedResource Include="Properties\Localization.de.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localization.es.resx" />
+    <EmbeddedResource Include="Properties\Localization.es.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localization.fr.resx" />
-    <EmbeddedResource Include="Properties\Localization.hi.resx" />
-    <EmbeddedResource Include="Properties\Localization.hy.resx" />
-    <EmbeddedResource Include="Properties\Localization.it.resx" />
-    <EmbeddedResource Include="Properties\Localization.ja.resx" />
-    <EmbeddedResource Include="Properties\Localization.ko.resx" />
-    <EmbeddedResource Include="Properties\Localization.pt.resx" />
+    <EmbeddedResource Include="Properties\Localization.hi.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localization.hy.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localization.it.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localization.ja.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localization.ko.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localization.pt.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localization.ru.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localization.th.resx" />
-    <EmbeddedResource Include="Properties\Localization.tr.resx" />
-    <EmbeddedResource Include="Properties\Localization.uk.resx" />
-    <EmbeddedResource Include="Properties\Localization.zh.resx" />
+    <EmbeddedResource Include="Properties\Localization.th.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localization.tr.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localization.uk.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localization.zh.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\OfflineAPI.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>OfflineAPI.Designer.cs</LastGenOutput>
