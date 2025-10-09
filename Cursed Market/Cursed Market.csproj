@@ -281,7 +281,9 @@
     <EmbeddedResource Include="Properties\Localization.ar.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localization.de.resx" />
+    <EmbeddedResource Include="Properties\Localization.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localization.es.resx" />
     <EmbeddedResource Include="Properties\Localization.fr.resx" />
     <EmbeddedResource Include="Properties\Localization.hi.resx" />
@@ -290,7 +292,9 @@
     <EmbeddedResource Include="Properties\Localization.ja.resx" />
     <EmbeddedResource Include="Properties\Localization.ko.resx" />
     <EmbeddedResource Include="Properties\Localization.pt.resx" />
-    <EmbeddedResource Include="Properties\Localization.ru.resx" />
+    <EmbeddedResource Include="Properties\Localization.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localization.th.resx" />
     <EmbeddedResource Include="Properties\Localization.tr.resx" />
     <EmbeddedResource Include="Properties\Localization.uk.resx" />

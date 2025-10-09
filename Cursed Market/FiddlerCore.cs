@@ -228,10 +228,10 @@ namespace Cursed_Market
 
             if (oSession.uriContains("/api/v1/config"))
             {
-                if (oSession.oRequest["Cookie"].Length > 0)
+                if (oSession.oRequest["api-key"].Length > 0)
                 {
-                    Globals_Session.Game.bhvrSession = oSession.oRequest["Cookie"].Replace("bhvrSession=", string.Empty);
-                    Globals_Cache.Forms.Main.UpdateBhvrSession();
+                    Globals_Session.Game.api_key = oSession.oRequest["api-key"];
+                    Globals_Cache.Forms.Main.UpdateApiKey();
                 }
 
                 return;

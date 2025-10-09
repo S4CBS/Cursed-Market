@@ -50,8 +50,8 @@ namespace Cursed_Market
             this.textBox_AuricCells = new System.Windows.Forms.TextBox();
             this.MainCheckBox_06 = new System.Windows.Forms.CheckBox();
             this.label_AuthorWaterMark = new System.Windows.Forms.Label();
-            this.textBox_BhvrSession = new System.Windows.Forms.TextBox();
-            this.button_BhvrSessionCopy = new System.Windows.Forms.Button();
+            this.textBox_ApiKey = new System.Windows.Forms.TextBox();
+            this.button_ApiKeyCopy = new System.Windows.Forms.Button();
             this.MainCheckBox_04 = new System.Windows.Forms.CheckBox();
             this.comboBox_Crosshairs = new System.Windows.Forms.ComboBox();
             this.trackBar_CrosshairOpacity = new System.Windows.Forms.TrackBar();
@@ -332,33 +332,33 @@ namespace Cursed_Market
             this.label_AuthorWaterMark.TabIndex = 31;
             this.label_AuthorWaterMark.Text = "SERVERNAME© 2025 RELEASE | MADE BY CRANCH (КРАНЧ) THE WOLF";
             // 
-            // textBox_BhvrSession
+            // textBox_ApiKey
             // 
-            this.textBox_BhvrSession.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_BhvrSession.Location = new System.Drawing.Point(99, 641);
-            this.textBox_BhvrSession.MaxLength = 512;
-            this.textBox_BhvrSession.Name = "textBox_BhvrSession";
-            this.textBox_BhvrSession.ReadOnly = true;
-            this.textBox_BhvrSession.Size = new System.Drawing.Size(460, 21);
-            this.textBox_BhvrSession.TabIndex = 32;
-            this.textBox_BhvrSession.Text = "bhvrSession will be shown here...";
-            this.textBox_BhvrSession.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_ApiKey.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_ApiKey.Location = new System.Drawing.Point(99, 641);
+            this.textBox_ApiKey.MaxLength = 512;
+            this.textBox_ApiKey.Name = "textBox_ApiKey";
+            this.textBox_ApiKey.ReadOnly = true;
+            this.textBox_ApiKey.Size = new System.Drawing.Size(460, 21);
+            this.textBox_ApiKey.TabIndex = 32;
+            this.textBox_ApiKey.Text = "ApiKey will be shown here...";
+            this.textBox_ApiKey.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button_BhvrSessionCopy
+            // button_ApiKeyCopy
             // 
-            this.button_BhvrSessionCopy.BackColor = System.Drawing.Color.DimGray;
-            this.button_BhvrSessionCopy.FlatAppearance.BorderSize = 0;
-            this.button_BhvrSessionCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_BhvrSessionCopy.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_BhvrSessionCopy.ForeColor = System.Drawing.Color.White;
-            this.button_BhvrSessionCopy.Location = new System.Drawing.Point(537, 641);
-            this.button_BhvrSessionCopy.Name = "button_BhvrSessionCopy";
-            this.button_BhvrSessionCopy.Size = new System.Drawing.Size(21, 21);
-            this.button_BhvrSessionCopy.TabIndex = 33;
-            this.button_BhvrSessionCopy.Text = "⧉";
-            this.button_BhvrSessionCopy.UseVisualStyleBackColor = false;
-            this.button_BhvrSessionCopy.Visible = false;
-            this.button_BhvrSessionCopy.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button_BhvrSessionCopy_MouseClick);
+            this.button_ApiKeyCopy.BackColor = System.Drawing.Color.DimGray;
+            this.button_ApiKeyCopy.FlatAppearance.BorderSize = 0;
+            this.button_ApiKeyCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_ApiKeyCopy.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_ApiKeyCopy.ForeColor = System.Drawing.Color.White;
+            this.button_ApiKeyCopy.Location = new System.Drawing.Point(537, 641);
+            this.button_ApiKeyCopy.Name = "button_ApiKeyCopy";
+            this.button_ApiKeyCopy.Size = new System.Drawing.Size(21, 21);
+            this.button_ApiKeyCopy.TabIndex = 33;
+            this.button_ApiKeyCopy.Text = "⧉";
+            this.button_ApiKeyCopy.UseVisualStyleBackColor = false;
+            this.button_ApiKeyCopy.Visible = false;
+            this.button_ApiKeyCopy.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button_ApiKeyCopy_MouseClick);
             // 
             // MainCheckBox_04
             // 
@@ -674,8 +674,8 @@ namespace Cursed_Market
             this.Controls.Add(this.label_CrosshairOpacityPercent);
             this.Controls.Add(this.trackBar_CrosshairOpacity);
             this.Controls.Add(this.comboBox_Crosshairs);
-            this.Controls.Add(this.button_BhvrSessionCopy);
-            this.Controls.Add(this.textBox_BhvrSession);
+            this.Controls.Add(this.button_ApiKeyCopy);
+            this.Controls.Add(this.textBox_ApiKey);
             this.Controls.Add(this.label_AuthorWaterMark);
             this.Controls.Add(this.pictureBox_AuricCells);
             this.Controls.Add(this.pictureBox_IridescentShards);
@@ -755,8 +755,8 @@ namespace Cursed_Market
         private System.Windows.Forms.PictureBox pictureBox_AuricCells;
         private System.Windows.Forms.Label label_AuthorWaterMark;
         private System.Windows.Forms.Button button_WindowTray;
-        private System.Windows.Forms.TextBox textBox_BhvrSession;
-        private System.Windows.Forms.Button button_BhvrSessionCopy;
+        private System.Windows.Forms.TextBox textBox_ApiKey;
+        private System.Windows.Forms.Button button_ApiKeyCopy;
         private System.Windows.Forms.CheckBox MainCheckBox_04;
         private System.Windows.Forms.ComboBox comboBox_Crosshairs;
         private System.Windows.Forms.TrackBar trackBar_CrosshairOpacity;

@@ -162,8 +162,8 @@
   <data name="MAIN_CrosshairOpacityTitle" xml:space="preserve">
     <value>조준선 투명도</value>
   </data>
-  <data name="MAIN_BhvrSession" xml:space="preserve">
-    <value>여기에 귀하의 bhvrSession이 있습니다...</value>
+  <data name="MAIN_ApiKey" xml:space="preserve">
+    <value>여기에 귀하의 ApiKey이 있습니다...</value>
   </data>
   <data name="MAIN_MainCheckBox_07" xml:space="preserve">
     <value>퀘스트 완료 보장</value>

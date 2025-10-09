@@ -162,8 +162,8 @@
   <data name="MAIN_CrosshairOpacityTitle" xml:space="preserve">
     <value>क्रॉसहेयर पारदर्शिता</value>
   </data>
-  <data name="MAIN_BhvrSession" xml:space="preserve">
-    <value>आपका bhvrSession यहाँ होगा...</value>
+  <data name="MAIN_ApiKey" xml:space="preserve">
+    <value>आपका ApiKey यहाँ होगा...</value>
   </data>
   <data name="MAIN_MainCheckBox_07" xml:space="preserve">
     <value>गारंटीकृत क्वेस्ट पूरा करना</value>

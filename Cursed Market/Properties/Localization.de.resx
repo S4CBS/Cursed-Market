@@ -162,8 +162,8 @@
   <data name="MAIN_CrosshairOpacityTitle" xml:space="preserve">
     <value>TRANSPARENZ DES FADENKREUZES</value>
   </data>
-  <data name="MAIN_BhvrSession" xml:space="preserve">
-    <value>Hier wird dein bhvrSession sein...</value>
+  <data name="MAIN_ApiKey" xml:space="preserve">
+    <value>Hier wird dein ApiKey sein...</value>
   </data>
   <data name="MAIN_MainCheckBox_07" xml:space="preserve">
     <value>Garantierte Quest-Abschluss</value>

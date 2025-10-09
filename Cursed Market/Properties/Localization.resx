@@ -162,8 +162,8 @@
   <data name="MAIN_CrosshairOpacityTitle" xml:space="preserve">
     <value>CROSSHAIR OPACITY</value>
   </data>
-  <data name="MAIN_BhvrSession" xml:space="preserve">
-    <value>bhvrSession will be shown here...</value>
+  <data name="MAIN_ApiKey" xml:space="preserve">
+    <value>ApiKey will be shown here...</value>
   </data>
   <data name="MAIN_MainCheckBox_07" xml:space="preserve">
     <value>Guaranteed Quest Completion</value>
