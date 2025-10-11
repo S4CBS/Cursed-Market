@@ -162,8 +162,8 @@
   <data name="MAIN_CrosshairOpacityTitle" xml:space="preserve">
     <value>NİŞANGAH ŞEFFAFLIĞI</value>
   </data>
-  <data name="MAIN_BhvrSession" xml:space="preserve">
-    <value>Burada sizin bhvrSession'ınız olacak...</value>
+  <data name="MAIN_ApiKey" xml:space="preserve">
+    <value>Burada sizin ApiKey'ınız olacak...</value>
   </data>
   <data name="MAIN_MainCheckBox_07" xml:space="preserve">
     <value>Görevin Tamamlanması Garantili</value>

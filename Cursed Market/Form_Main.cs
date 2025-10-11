@@ -140,7 +140,7 @@ namespace Cursed_Market
                     button_Start.BackColor = Color.Black;
                     button_Start.ForeColor = Color.White;
                     button_WindowTray.BackColor = Color.DarkGray;
-                    button_BhvrSessionCopy.BackColor = Color.DimGray;
+                    button_ApiKeyCopy.BackColor = Color.DimGray;
                     break;
 
                 case Globals.Application.Theme.E_Themes.legacy:
@@ -174,7 +174,7 @@ namespace Cursed_Market
                     button_Start.BackColor = Color.IndianRed;
                     button_Start.ForeColor = Color.White;
                     button_WindowTray.BackColor = Color.SlateBlue;
-                    button_BhvrSessionCopy.BackColor = Color.RoyalBlue;
+                    button_ApiKeyCopy.BackColor = Color.RoyalBlue;
                     break;
 
                 case Globals.Application.Theme.E_Themes.darkMemories:
@@ -208,7 +208,7 @@ namespace Cursed_Market
                     button_Start.BackColor = Color.FromArgb(255, 65, 65, 65);
                     button_Start.ForeColor = Color.White;
                     button_WindowTray.BackColor = Color.SlateBlue;
-                    button_BhvrSessionCopy.BackColor = Color.FromArgb(255, 85, 85, 85);
+                    button_ApiKeyCopy.BackColor = Color.FromArgb(255, 85, 85, 85);
                     break;
 
                 case Globals.Application.Theme.E_Themes.saintsRow:
@@ -242,7 +242,7 @@ namespace Cursed_Market
                     button_Start.BackColor = Color.FromArgb(255, 89, 67, 218);
                     button_Start.ForeColor = Color.White;
                     button_WindowTray.BackColor = Color.SlateBlue;
-                    button_BhvrSessionCopy.BackColor = Color.FromArgb(255, 118, 93, 222);
+                    button_ApiKeyCopy.BackColor = Color.FromArgb(255, 118, 93, 222);
                     break;
 
                 case Globals.Application.Theme.E_Themes.dracula:
@@ -276,7 +276,7 @@ namespace Cursed_Market
                     button_Start.BackColor = Color.FromArgb(255, 89, 67, 218);
                     button_Start.ForeColor = Color.FromArgb(255, 248, 248, 242);
                     button_WindowTray.BackColor = Color.SlateBlue;
-                    button_BhvrSessionCopy.BackColor = Color.FromArgb(255, 118, 93, 222);
+                    button_ApiKeyCopy.BackColor = Color.FromArgb(255, 118, 93, 222);
                     break;
 
                 case Globals.Application.Theme.E_Themes.christmas:
@@ -310,7 +310,7 @@ namespace Cursed_Market
                     button_Start.BackColor = Color.FromArgb(255, 221, 34, 85);
                     button_Start.ForeColor = Color.White;
                     button_WindowTray.BackColor = Color.SlateBlue;
-                    button_BhvrSessionCopy.BackColor = Color.FromArgb(255, 142, 22, 55);
+                    button_ApiKeyCopy.BackColor = Color.FromArgb(255, 142, 22, 55);
                     break;
             }
         }
@@ -361,7 +361,7 @@ namespace Cursed_Market
             label_CrosshairTitle.Text = Properties.Localization.MAIN_CrosshairTitle;
             label_CrosshairOpacityTitle.Text = Properties.Localization.MAIN_CrosshairOpacityTitle;
 
-            textBox_BhvrSession.Text = Properties.Localization.MAIN_BhvrSession;
+            textBox_ApiKey.Text = Properties.Localization.MAIN_ApiKey;
             #endregion
         }
 
@@ -735,9 +735,9 @@ namespace Cursed_Market
         }
 
 
-        private void button_BhvrSessionCopy_MouseClick(object sender, MouseEventArgs e)
+        private void button_ApiKeyCopy_MouseClick(object sender, MouseEventArgs e)
         {
-            Clipboard.SetText(textBox_BhvrSession.Text);
+            Clipboard.SetText(textBox_ApiKey.Text);
             Media.PlaySoundFromStream(Properties.Resources.SFX_Activate);
         }
 
@@ -763,14 +763,14 @@ namespace Cursed_Market
             }
         }
 
-        public void UpdateBhvrSession() 
+        public void UpdateApiKey() 
         {
             Globals_Cache.Forms.Main.Invoke(new Action(() =>
             {
-                textBox_BhvrSession.Width = 439; // What a generous approach <:3
-                textBox_BhvrSession.Text = Globals_Session.Game.bhvrSession;
+                textBox_ApiKey.Width = 439; // What a generous approach <:3
+                textBox_ApiKey.Text = Globals_Session.Game.api_key;
 
-                button_BhvrSessionCopy.Visible = true;
+                button_ApiKeyCopy.Visible = true;
                 pictureBox_Button_CloudIDFriend.Visible = true;
             }));
         }

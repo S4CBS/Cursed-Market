@@ -19,11 +19,7 @@ namespace Cursed_Market
                 Custom
             }
 
-
-
-
-            public static string bhvrSession = null;
-            public static string userId      = null;
+            public static string userId = null;
 
 
             public static bool isInQueue = false;
@@ -141,6 +137,8 @@ namespace Cursed_Market
             public static string client_provider = null;
             public static string client_platform = null;
             public static string client_os = null;
+            public static string api_key = null;
+            public static string client_kraken_session = null;
         }
     }
 }

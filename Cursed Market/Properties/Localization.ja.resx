@@ -162,8 +162,8 @@
   <data name="MAIN_CrosshairOpacityTitle" xml:space="preserve">
     <value>クロスヘアの透明度</value>
   </data>
-  <data name="MAIN_BhvrSession" xml:space="preserve">
-    <value>ここにあなたのbhvrSessionがあります...</value>
+  <data name="MAIN_ApiKey" xml:space="preserve">
+    <value>ここにあなたのApiKeyがあります...</value>
   </data>
   <data name="MAIN_MainCheckBox_07" xml:space="preserve">
     <value>クエストの確実な完了</value>

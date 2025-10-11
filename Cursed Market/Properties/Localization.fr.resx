@@ -162,8 +162,8 @@
   <data name="MAIN_CrosshairOpacityTitle" xml:space="preserve">
     <value>TRANSPARENCE DU RETOUR</value>
   </data>
-  <data name="MAIN_BhvrSession" xml:space="preserve">
-    <value>Votre bhvrSession sera ici...</value>
+  <data name="MAIN_ApiKey" xml:space="preserve">
+    <value>Votre ApiKey sera ici...</value>
   </data>
   <data name="MAIN_MainCheckBox_07" xml:space="preserve">
     <value>Achèvement de la quête garanti</value>

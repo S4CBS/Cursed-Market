@@ -162,7 +162,7 @@
   <data name="MAIN_CrosshairOpacityTitle" xml:space="preserve">
     <value>ԲԻՆԱԻ ՊԱՐԱՄԵՏՐԸ</value>
   </data>
-  <data name="MAIN_BhvrSession" xml:space="preserve">
+  <data name="MAIN_ApiKey" xml:space="preserve">
     <value>ՍՅՈՒՐԲ ՕՐԻՆԱԿԸ ԴՈՒՐՍ ՆԵՐԱԲԱՆԱՆՔ...</value>
   </data>
   <data name="MAIN_MainCheckBox_07" xml:space="preserve">

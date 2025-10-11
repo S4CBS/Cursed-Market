@@ -1,5 +1,6 @@
 ﻿using CranchyLib.Networking;
 using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 
 namespace Cursed_Market
@@ -49,7 +50,7 @@ namespace Cursed_Market
         {
             List<string> headers = new List<string>()
             {
-                $"Cookie: bhvrSession={Globals_Session.Game.bhvrSession}",
+                $"api-key: {Globals_Session.Game.api_key}",
                 $"User-Agent: {Globals_Session.Game.user_agent}",
                 $"x-kraken-client-platform: {Globals_Session.Game.client_platform}",
                 $"x-kraken-client-provider: {Globals_Session.Game.client_provider}",
@@ -127,11 +128,12 @@ namespace Cursed_Market
             if (matchData.matchId != lastSuccessfulMatch.matchId && matchData.krakenMatchId != lastSuccessfulMatch.krakenMatchId) // Verify that match we're about to use isn't one that we've already used.
             {
                 S_Quest activeQuest = GetActiveQuest();
+
                 if (activeQuest.nodeId != null && (activeQuest.currentProgression != activeQuest.neededProgression)) // Make sure that we've successfully retrieved a quest data and that quest isn't yet complete (there's progression steps to do)
                 {
                     List<string> headers = new List<string>()
                     {
-                        $"Cookie: bhvrSession={Globals_Session.Game.bhvrSession}",
+                        $"api-key: {Globals_Session.Game.api_key}",
                         $"User-Agent: {Globals_Session.Game.user_agent}",
                         $"x-kraken-client-platform: {Globals_Session.Game.client_platform}",
                         $"x-kraken-client-provider: {Globals_Session.Game.client_provider}",

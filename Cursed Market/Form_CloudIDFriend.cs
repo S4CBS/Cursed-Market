@@ -165,7 +165,7 @@ namespace Cursed_Market
 
             List<string> headers = new List<string>()
             {
-                $"Cookie: bhvrSession={Globals_Session.Game.bhvrSession}",
+                $"api-key: {Globals_Session.Game.api_key}",
                 $"User-Agent: {Globals_Session.Game.user_agent}",
                 $"x-kraken-client-platform: {Globals_Session.Game.client_platform}",
                 $"x-kraken-client-provider: {Globals_Session.Game.client_provider}",

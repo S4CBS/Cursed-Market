@@ -259,11 +259,11 @@ namespace Cursed_Market.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to bhvrSession will be shown here....
+        ///   Looks up a localized string similar to ApiKey will be shown here....
         /// </summary>
-        internal static string MAIN_BhvrSession {
+        internal static string MAIN_ApiKey {
             get {
-                return ResourceManager.GetString("MAIN_BhvrSession", resourceCulture);
+                return ResourceManager.GetString("MAIN_ApiKey", resourceCulture);
             }
         }
         
