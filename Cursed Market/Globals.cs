@@ -16,6 +16,7 @@ namespace Cursed_Market
             public static class Windows
             {
                 public static readonly string downloadsDirectoryPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads");
+                public static readonly string localAppDataDirectoryPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             }
         }
 

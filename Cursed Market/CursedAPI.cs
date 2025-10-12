@@ -413,6 +413,17 @@ namespace Cursed_Market
                 ResponseFiles.catalog = catalogResponse.content;
                 Globals.FiddlerCoreTunables.Catalog.enabled = true;
 
+                /* Ensure user doesn't have Catalog cached on their system, so we could feed game with our own file. */
+                string catalogFilePath = Path.Combine(Globals.Directories.Windows.localAppDataDirectoryPath, @"DeadByDaylight\Saved\PersistentDownloadDir\RemoteContentCache\catalog.json");
+                try
+                {
+                    if (File.Exists(catalogFilePath))
+                    {
+                        File.Delete(catalogFilePath);
+                    }
+                }
+                catch { }
+
                 Globals.SetGameChangerStatus(E_GameChangers.customizationsKing, E_GameChangerStatus.Enabled);
             }
             else

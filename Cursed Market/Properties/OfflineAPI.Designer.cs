@@ -61,7 +61,7 @@ namespace Cursed_Market.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to eJytXVl3IjnS/S9+7gdvvVS/GTC2y6ZMG8o+Pd+Z4yNIAdlOUkwu5aL6zH+fG8qFxW7pCn8PJNuNlFKhJRQRivj7aJIYEz3pyZ3+ppPuQqVzHR39PlNJrn86KleRKnT0pJJEF/nR7//375+OpguVqWmhsy9qqY9+Pzr6afceR7+fHf90tMp0XsRzXf+EXxpQTxXq6Pe/j1aqWMgtj46fT45PcBd5P63fz+r38/r95/r9F7wDXSNxrbG41mhcazyuLcUvdRlCe7r1qbnLaX0X+VTd5QyfqrvIp+ou5/j0a/vpt7qM0+NPzaeT47q005OqDPkkZaDMujRc69JwrUvDtS4N17o0XOvScK1Lw7UuDde6NFzr0nBtSjuRMuS3M5R7ZsvFFZ+kXFzxScrFFZ+kXFzxScrFFZ+kXFzxScrFFZ+kXFyfz2y5uOKTLQPlntlycQXu5Ai9JIvTecXp//v7KDWR3vlygy6GLpEX6F3oQl2D/oUuFR3999///WkPPzVp [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to eJytXVt32kjW/S9+7ofYTqc7/WbwLbGJaUPs1fOtWV4FKkCNUDG62CG95r/PPiUJhJxU7cLfA/d9KKlOXU6d6z9Hk8SY6FFPbvWzTvoLlc51dPTHTCW5/uWoXEeq0NGjShJd5Ed//N+/fzmaLlSmpoXOvqiVPvrj6OiX/f84+uP03S9H60znRTzX9Vf4pgGdq0Id/fHP0VoVC/nLo3dPx++O8S/yelK/ntav7+vXX+vXD3gFukbiucbiuUbjucbjeUvxoW5DaE9a75p/Oan/Rd5V/3KKd9W/yLvqX97j3W/bd7/XbZy8+9i8O35Xt3ZyXLUh76QNtFm3hue6NTzXreG5bg3PdWt4rlvDc90anuvW8Fy3hue6NTw3rR1LG/LdKdo9te3iGe+kXTzjnbSLZ7yTdvGMd9IunvFO2sUz3km7eMY7aRfPT6e2XTzjnW0D7Z7advEM3PERRkkWp/OK0//3z1FqIr334ROGGIZEXmB0YQj1DcYXhlR09N9///eX [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string BloodWebData {
             get {
@@ -70,7 +70,7 @@ namespace Cursed_Market.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to eJytvVl3GknyPvxdfN0XsmS3230n0GZt0IDk454zRyehEqhWUcXUYoz/Z777+0Rm7cgRv2DeC/YnqKyM3CPiif/3Lgqz/N2f//p/7xZrk5pFbtNHs7Hv/nx3sQtX6/zdb+8iuzKL/Ti1WR6u7L39bqN3f5781gh8ye0mc/8R4t2XAML01cvQbLY2fTmP7I9sliTRPPmBv/tPYeI8zPfv/vx48t/ffiEzsLjUg9n+n/Fp8mrjO7v/vwoMk80mCcKk0JbsoogixXUu41UYW5sqr3IVpnaB2n2loq7xD5n9P4tGJltHpe6UEienR8ic/V9lFNX2YNG64nCh1c6DDe7C//ONe/T//aZL/P/5hkv8h/8rfmLCeJ7sFO1eWT1fkzROivz/KjUlJbveaNI8/T+UqhIYrnEnmdn9nwXG0HaebGb/l4sctsD/cwVDIa9QyMf/K/6+iM3/0nXP4zj8btPMpPvTk/ef/8/VcW2yQbKZ/5/xd6fvx8nOpvq66xbx9ERX [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to eJylfVd34srS9n+Z630xY3vSvrONcWTMBmyvfc46y0ugBrQREkdhsOZd579/VS21Ep4KfBekUApdHaorPM//fQiDNPvw57//78Ni7SXeIjPJD29rPvz54T4IQ5N8/Prhjw+hWXmLYpyYNAtW5sH8NOGHPz/+0YjcZmab2qME8O7WB3H86nUaeunaJK+XYextLkwYwsH+m3tRFmTFhz8/f/zfH7+TuD/9OI73JhELzOJka6JsFPtGcZJT2Ukuve2u/P8sTxKTic/wl5d5SdmSutt5GF6uvSBKvb3ibk6Ud3Nytd2JDz8BtSepuTBeMks8udz9yZnqsi7jKPO2QeRlQRxNTZJvxaeaZl64UTTy9TpOM51e3KjAL8VCw8REvwqFIr8oFfll5K2Chf3uAkYk6Ok42TjOjpN8NovIuyr4ofdb4Rsv8uUt5EXxPFY06Gedlseht8qNTuYiDCJN57s//a47wY2XLdaKuef+TDmF3p8KR2oztIXt+gBLSpTByF4G [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string CharacterData {
             get {
