@@ -69,6 +69,7 @@ namespace Cursed_Market
                             "steam.live.bhvrdbd.com",
                             "cdn.live.dbd.bhvronline.com",
                             "cdn.live.bhvrdbd.com",
+                            "cdn-steam.live.bhvrdbd.com", // 9.2.3+
                             "gamelogs.live.bhvrdbd.com"
                         };
 
@@ -85,6 +86,7 @@ namespace Cursed_Market
                             "grdk.live.bhvrdbd.com",
                             "cdn.live.dbd.bhvronline.com",
                             "cdn.live.bhvrdbd.com",
+                            "cdn-grdk.live.bhvrdbd.com", // 9.2.3+
                             "gamelogs.live.bhvrdbd.com"
                         };
 
@@ -94,6 +96,7 @@ namespace Cursed_Market
                             "egs.live.bhvrdbd.com",
                             "cdn.live.dbd.bhvronline.com",
                             "cdn.live.bhvrdbd.com",
+                            "cdn-egs.live.bhvrdbd.com", // 9.2.3+
                             "gamelogs.live.bhvrdbd.com"
                         };
 
